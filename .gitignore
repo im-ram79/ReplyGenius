@@ -1,0 +1,16 @@
+# Devpost Learn personal learning context
+/devpost/learner-profile.md
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

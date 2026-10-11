@@ -1,0 +1,26 @@
+{
+  "name": "replygenius",
+  "version": "1.0.0",
+  "description": "AI-powered customer message reply generator for small businesses in India",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test/test-api.js"
+  },
+  "keywords": [
+    "ai",
+    "customer-service",
+    "small-business",
+    "india",
+    "gemini",
+    "hackathon"
+  ],
+  "author": "Yash Singh",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
