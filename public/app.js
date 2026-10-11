@@ -3,6 +3,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const API_BASE = window.location.origin; // Base URL for API calls (same origin in dev)
   // DOM Elements
   const messageInput = document.getElementById('messageInput');
   const charCount = document.getElementById('charCount');
@@ -23,8 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Check Backend Health
   async function checkHealth() {
     try {
-      const res = await fetch('/api/health');
+      const res = await fetch(`${API_BASE}/api/health`);
       if (res.ok) {
+        const ct = res.headers.get('content-type') || '';
+        if (!ct.includes('application/json')) {
+          throw new Error('Health endpoint returned non‑JSON (likely HTML).');
+        }
         const data = await res.json();
         if (data.apiKeyConfigured) {
           statusText.textContent = 'Ready • Gemini Active';
@@ -146,12 +151,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const tone = getSelectedValue('tone') || 'friendly';
 
     try {
-      const response = await fetch('/api/generate', {
+      const response = await fetch(`${API_BASE}/api/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message, language, tone })
       });
 
+      // Ensure we got JSON, not HTML fallback
+      const contentType = response.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        throw new Error('Server returned non‑JSON (likely HTML). Ensure the backend is running and the URL is correct.');
+      }
       const data = await response.json();
 
       if (response.ok && data.status === 'success') {
