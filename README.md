@@ -116,5 +116,5 @@ This project was built following the official **Devpost Learn AI Basics** spec-d
 ---
 
 ## 📜 License
-MIT License. Created by Yash Singh for the Build With AI: Basics Hackathon.
+Created by Yash Singh for the Build With AI: Basics Hackathon.
 # ReplyGenius
