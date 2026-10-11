@@ -9,7 +9,7 @@ Build mode: fast
 
 ## Slices
 
-- [ ] **1. Project Bootstrap and Backend API Server**
+- [x] **1. Project Bootstrap and Backend API Server**
   Becomes usable: A running Node.js Express server with a functional `POST /api/generate` endpoint that accepts customer message, language, and tone, returning a formatted reply with Indian retail guardrails.
   Why now: Establishes the server foundation, protects API secrets from client code, and provides an immediately testable API endpoint.
   PRD ref: `prd.md > Features and Behavior > 4. AI Reply Generation & Safety Guardrails`
@@ -19,7 +19,7 @@ Build mode: fast
   Learner check: Run `npm start` and observe the server start cleanly on port 3000.
   Commit: `Bootstrap Express server with AI reply generator endpoint`
 
-- [ ] **2. Interactive Web Frontend with Multi-Language and Tone Controls**
+- [x] **2. Interactive Web Frontend with Multi-Language and Tone Controls**
   Becomes usable: A responsive web page at `http://localhost:3000` where the user can enter a message or click an example scenario, pick language (English, Hindi, Gujarati) and tone, and click "Generate Reply" to see the generated text.
   Why now: Delivers the core user loop so the user can interact directly with the app in their browser.
   PRD ref: `prd.md > The Core Journey`, `prd.md > Screens and Layout`
@@ -29,7 +29,7 @@ Build mode: fast
   Learner check: Open `http://localhost:3000` in your web browser, click a quick example message, select Hindi and Friendly, and click "Generate Reply" to see the generated response.
   Commit: `Implement responsive web interface with multi-language and tone controls`
 
-- [ ] **3. Copy to Clipboard, Input Validation, and Error Handling**
+- [x] **3. Copy to Clipboard, Input Validation, and Error Handling**
   Becomes usable: One-click "Copy Reply" button with animated feedback, empty input validation warnings, and friendly error banners.
   Why now: Completes the final user actions needed to make the reply immediately usable in real messaging apps like WhatsApp.
   PRD ref: `prd.md > Features and Behavior > 5. Copy to Clipboard`, `prd.md > States and Boundaries`
@@ -39,7 +39,7 @@ Build mode: fast
   Learner check: Click "Copy Reply" on a generated response and paste it into a notepad to confirm it copies properly; try clicking Generate with an empty message to see the friendly warning.
   Commit: `Add one-click copy, input validation, and user feedback alerts`
 
-- [ ] **4. Automated Test Suite, Setup Guide, and Repo Readiness**
+- [x] **4. Automated Test Suite, Setup Guide, and Repo Readiness**
   Becomes usable: A complete, self-verifying test script in `test/test-api.js`, comprehensive `README.md`, safe `.env.example`, and clean git history ready for public GitHub publication.
   Why now: Satisfies all hackathon submission requirements and ensures anyone can clone, test, and run the project effortlessly.
   PRD ref: `prd.md > What We're Building`
